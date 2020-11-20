@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Fk52gal</groupId>
+  <artifactId>Fk52gal</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>Maven Quick Start Archetype</name>
+  <url>http://maven.apache.org</url>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin </artifactId>
+        <configuration>  
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>Fk52gal</mainClass>
+              <addClasspath>true</addClasspath>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>Fk52gal</mainClass>
+            </manifest>
+          </archive>
+          <descriptors>
+            <descriptor>src/assemble/distribution.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+   <resources>
+
+       <resource>
+          <directory> src/main/resources/ </directory>
+          <includes>
+            <include> logger.config </include>
+          </includes>
+       </resource>
+
+    </resources>
+
+ </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.15</version>
+      <scope>compile</scope>
+    </dependency>
+
+   <dependency>
+      <groupId>jsky</groupId>
+      <artifactId>coords</artifactId>
+      <version>2.6</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>colt</groupId>
+      <artifactId>colt</artifactId>
+      <version>1.2.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+<repositories>
+
+  <repository>
+    <id>ibiblio-maven</id>
+    <name>Maven Ibiblio</name>
+    <url>http://www.ibiblio.org/maven2</url>
+  </repository>
+
+</repositories>
+
+</project>
